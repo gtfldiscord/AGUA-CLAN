@@ -1,7 +1,9 @@
+
 <!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/webp" href="logo.webp">
 <title>AGUA CLAN | Reglamento oficial</title>
 <style>
 :root{--blue:#08a9ed;--blue2:#0878d1;--navy:#061321;--panel:rgba(5,18,32,.88);--line:rgba(30,174,239,.24);--muted:#a8bdce}
@@ -103,5 +105,15 @@ it:{eyebrow:'AGUA CLAN · TEAM ACL',title:'REGOLAMENTO<br><span>UFFICIALE</span>
 ]]
 ]}
 };
-const icons=['01','02','03'];function render(lang){const t=translations[lang];document.documentElement.lang=lang;document.querySelectorAll('[data-i18n]').forEach(el=>{el.innerHTML=t[el.dataset.i18n]});document.getElementById('rules').innerHTML=t.sections.map((s,i)=>`<details class="rule" ${i===0?'open':''}><summary><span class="num">${icons[i]}</span>${s[0]}<span class="chev">⌄</span></summary><div class="content"><ol>${s[1].map(x=>`<li>${x}</li>`).join('')}</ol></div></details>`).join('');document.querySelectorAll('.lang').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));localStorage.setItem('aguaClanLang',lang)}document.querySelectorAll('.lang').forEach(b=>b.addEventListener('click',()=>render(b.dataset.lang)));render(localStorage.getItem('aguaClanLang')||'es');
+const icons=['01','02','03'];
+function render(lang){
+const t=translations[lang];
+document.documentElement.lang=lang;
+document.querySelectorAll('[data-i18n]').forEach(el=>{el.innerHTML=t[el.dataset.i18n]});
+document.getElementById('rules').innerHTML=t.sections.map((s,i)=>`<details class="rule" ${i===0?'open':''}><summary><span class="num">${icons[i]}</span>${s[0]}<span class="chev">⌄</span></summary><div class="content"><ol>${s[1].map(x=>`<li>${x}</li>`).join('')}</ol></div></details>`).join('');
+document.querySelectorAll('.lang').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+localStorage.setItem('aguaClanLang',lang)
+}
+document.querySelectorAll('.lang').forEach(b=>b.addEventListener('click',()=>render(b.dataset.lang)));
+render(localStorage.getItem('aguaClanLang')||'es');
 </script></body></html>
