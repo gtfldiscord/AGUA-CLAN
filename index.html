@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AGUA CLAN | Reglamento oficial</title>
+<style>
+:root{--blue:#08a9ed;--blue2:#0878d1;--navy:#061321;--panel:rgba(5,18,32,.88);--line:rgba(30,174,239,.24);--muted:#a8bdce}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 10%,#0a3154 0,#061321 38%,#030a12 100%);color:#f4f8fc;font-family:Inter,Arial,sans-serif;min-height:100vh}
+.top{height:82px;display:flex;align-items:center;justify-content:space-between;padding:12px clamp(18px,5vw,70px);border-bottom:1px solid var(--line);background:rgba(2,10,19,.78);position:relative;z-index:2}.brand{display:flex;align-items:center;gap:14px}.brand img{width:54px;height:54px;border-radius:50%;border:2px solid var(--blue);object-fit:cover}.brand strong{font-size:21px;letter-spacing:2px}.brand span{display:block;color:var(--muted);font-size:10px;letter-spacing:5px;margin-top:4px}.langs{display:flex;gap:9px}.lang{background:#0b2034;border:1px solid #24425b;border-radius:10px;padding:8px 11px;font-size:24px;cursor:pointer;transition:.2s}.lang:hover,.lang.active{border-color:var(--blue);background:#07365b;box-shadow:0 0 16px #08a9ed55}
+.hero{min-height:360px;display:flex;align-items:center;padding:55px clamp(20px,7vw,100px);background:linear-gradient(90deg,rgba(3,12,22,.98) 0%,rgba(3,12,22,.78) 38%,rgba(3,12,22,.15) 100%),url('render.jpg') center 35%/cover no-repeat;position:relative}.hero:after{content:"";position:absolute;inset:auto 0 0;height:100px;background:linear-gradient(transparent,#061321)}.hero-copy{position:relative;z-index:1;max-width:650px}.eyebrow{color:var(--blue);font-size:12px;letter-spacing:5px;font-weight:800}.hero h1{font-size:clamp(42px,7vw,76px);line-height:.96;margin:17px 0 14px;font-weight:950;letter-spacing:-2px}.hero h1 span{color:var(--blue)}.hero p{font-size:16px;color:#c1d0dd;max-width:480px;line-height:1.6;margin:0;border-left:3px solid var(--blue);padding-left:14px}
+main{max-width:1050px;margin:-12px auto 70px;padding:0 20px;position:relative;z-index:1}.section-head{display:flex;justify-content:space-between;align-items:end;margin:25px 0 17px;gap:15px}.section-head h2{font-size:22px;margin:0;letter-spacing:1px}.section-head p{color:var(--muted);font-size:12px;margin:6px 0 0}.rule-list{display:grid;gap:11px}.rule{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;backdrop-filter:blur(12px);box-shadow:0 12px 32px #0003}.rule summary{list-style:none;cursor:pointer;padding:20px 22px;display:flex;align-items:center;gap:15px;font-size:17px;font-weight:750}.rule summary::-webkit-details-marker{display:none}.num{height:36px;width:36px;border-radius:10px;background:#073b60;color:#32c4ff;display:grid;place-items:center;font-size:14px;font-weight:900}.chev{margin-left:auto;color:var(--blue);font-size:22px;transition:.2s}.rule[open] .chev{transform:rotate(180deg)}.content{padding:0 25px 22px 73px;color:#c8d6e2;line-height:1.65;font-size:14px}.content ol{padding-left:19px;margin:0}.content li{padding:5px 0}.footer{text-align:center;color:#6f879a;font-size:11px;letter-spacing:4px;padding:26px 10px 36px}.footer b{color:var(--blue);font-weight:700}
+@media(max-width:600px){.top{height:72px;padding:10px 14px}.brand img{width:45px;height:45px}.brand strong{font-size:16px}.brand span{font-size:8px;letter-spacing:3px}.langs{gap:5px}.lang{padding:7px 8px;font-size:19px}.hero{min-height:330px;padding:45px 22px;background-position:58% center}.hero h1{font-size:48px}.section-head{display:block}.content{padding:0 18px 20px 22px}.rule summary{padding:16px;font-size:15px}}
+</style></head>
+<body>
+<header class="top"><div class="brand"><img src="logo.webp" alt="Escudo AGUA CLAN"><div><strong>AGUA CLAN</strong><span>TEAM ACL</span></div></div><nav class="langs" aria-label="Seleccionar idioma"><button class="lang active" data-lang="es" aria-label="Español">🇪🇸</button><button class="lang" data-lang="en" aria-label="English">🇬🇧</button><button class="lang" data-lang="it" aria-label="Italiano">🇮🇹</button></nav></header>
+<section class="hero"><div class="hero-copy"><div class="eyebrow" data-i18n="eyebrow">AGUA CLAN · TEAM ACL</div><h1 data-i18n="title">REGLAMENTO<br><span>OFICIAL</span></h1><p data-i18n="subtitle">Conoce y respeta las normas que representan a Agua Clan dentro y fuera del campo.</p></div></section>
+<main><div class="section-head"><div><h2 data-i18n="rulesTitle">NORMAS DEL CLUB</h2><p data-i18n="rulesSub">Reglamento general de jugadores y miembros de Agua Clan.</p></div></div><div class="rule-list" id="rules"></div></main>
+<footer class="footer">AGUA CLAN <b>•</b> TEAM ACL <b>•</b> EST. 2024</footer>
+<script>
+const translations={
+es:{eyebrow:'AGUA CLAN · TEAM ACL',title:'REGLAMENTO<br><span>OFICIAL</span>',subtitle:'Conoce y respeta las normas que representan a Agua Clan dentro y fuera del campo.',rulesTitle:'NORMAS DEL CLUB',rulesSub:'Reglas generales, equipos actualmente activos y política disciplinaria.',sections:[
+['Reglas generales',[
+'Está terminantemente prohibido compartir, solicitar, publicar o distribuir CP (contenido de abuso sexual infantil), así como cualquier contenido sexual que involucre a menores. Esta conducta supondrá la expulsión permanente y podrá ser comunicada a las plataformas o autoridades correspondientes.',
+'Está prohibido publicar pornografía, contenido NSFW, gore explícito o material sexual/violento no apto para el servidor. No intentes esquivar esta norma mediante enlaces, imágenes ocultas o mensajes privados dentro de la comunidad.',
+'No se pueden filtrar, publicar ni difundir fotos de la cara, datos personales o información privada de otra persona sin su consentimiento. Podrán existir excepciones muy concretas —por ejemplo, material que la propia persona haya hecho público o autorizado—, pero deberán ser valoradas por el staff. Nunca se permitirá difundir contenido íntimo o usar imágenes para acosar o humillar.',
+'No se permiten amenazas de muerte, amenazas reales ni insultos extremadamente graves. Los conflictos y mensajes denunciados serán revisados teniendo en cuenta el contexto, la intención, la reiteración y cómo haya afectado a la persona implicada.',
+'Queda prohibida cualquier forma de discriminación por nacionalidad, origen, apariencia, género, orientación, religión, discapacidad u otra condición. Las bromas solo serán aceptables si todas las personas implicadas están cómodas; si alguien expresa que le molesta, se debe parar inmediatamente.',
+'Mantén un trato respetuoso, evita el spam, las provocaciones constantes, el acoso, la suplantación y la difusión de rumores. No publiques conversaciones privadas ni capturas ajenas para generar conflictos.',
+'Respeta las normas y los Términos de Servicio de Discord y Roblox. No utilices exploits, trampas, amenazas, estafas ni métodos para perjudicar a otros miembros.',
+'Las decisiones del staff deben tratarse con respeto. Si no estás de acuerdo con una decisión, solicita una revisión por los canales adecuados en lugar de iniciar discusiones o ataques públicos.'
+]],
+['Equipos actuales',[
+'Actualmente, Agua Clan mantiene actividad competitiva únicamente en Reims FWT y Venezuela TSW.',
+'El club tiene previsto regresar progresivamente a otras competiciones y proyectos. Los equipos, torneos o actividades que se reactiven se anunciarán oficialmente cuando estén confirmados.',
+'No se debe dar por hecho que una plantilla, equipo o competición está activo si no ha sido anunciado por el club.',
+'Los jugadores deben respetar a sus compañeros, rivales, capitanes y organizadores, independientemente del equipo o competición en la que participen.'
+]],
+['Conducta y sanciones',[
+'Cada denuncia será revisada individualmente. El staff tendrá en cuenta el contexto completo y escuchará, cuando sea necesario, a las personas implicadas antes de decidir.',
+'Para sancionar una conducta deberá existir una prueba verificable (captura, vídeo, registro o mensaje) o el testimonio directo de un miembro del staff que haya presenciado los hechos. Una acusación sin pruebas ni testigo directo no será suficiente por sí sola.',
+'Las pruebas deberán enviarse al chat interno del staff y mantenerse privadas. No se deben publicar acusaciones, datos personales ni pruebas sensibles en canales públicos.',
+'La sanción dependerá de la gravedad, intención, daño causado y reincidencia. Podrá consistir en aviso, advertencia formal, mute, suspensión temporal, expulsión de una actividad o expulsión permanente.',
+'Las infracciones extremadamente graves —como compartir CP o material de abuso sexual infantil— podrán conllevar expulsión permanente inmediata, sin necesidad de acumular advertencias.',
+'Las amenazas reales, el acoso grave, la difusión no consentida de contenido íntimo, la discriminación grave y las infracciones de las normas de Discord o Roblox podrán implicar sanciones severas y, cuando corresponda, un reporte a la plataforma.',
+'En los amistosos debes respetar a todos los participantes, incluso si alguien juega mal, comete errores o tiene un mal rendimiento. No se tolerarán humillaciones, ataques personales ni acoso por el resultado.',
+'El staff podrá aplicar medidas preventivas mientras revisa un caso si existe un riesgo para la seguridad de la comunidad. Las decisiones y sus pruebas quedarán registradas en el chat interno correspondiente.'
+]]
+]},
+en:{eyebrow:'AGUA CLAN · TEAM ACL',title:'OFFICIAL<br><span>RULES</span>',subtitle:'Know and respect the standards that represent Agua Clan on and off the pitch.',rulesTitle:'CLUB RULES',rulesSub:'General rules, currently active teams and disciplinary policy.',sections:[
+['General rules',[
+'It is strictly forbidden to request, share, post or distribute CSAM (child sexual abuse material), or any sexual content involving minors. This will result in permanent removal and may be reported to the relevant platforms or authorities.',
+'Pornography, NSFW content, explicit gore, and sexual or violent material unsuitable for the server are prohibited. Do not attempt to bypass this rule using links, hidden images or private messages within the community.',
+'You may not leak, post or distribute another person’s face photos, personal data or private information without their consent. Very limited exceptions may be considered—for example, material the person has made public themselves or explicitly approved—but staff must review them. Intimate content must never be shared, nor may images be used to harass or humiliate anyone.',
+'Death threats, real-world threats and extremely severe insults are prohibited. Reported incidents and conflicts will be reviewed in context, considering intent, repetition and the impact on the person involved.',
+'All forms of discrimination based on nationality, origin, appearance, gender, orientation, religion, disability or any other characteristic are prohibited. Jokes are only acceptable when everyone involved is comfortable; if someone says they are uncomfortable, stop immediately.',
+'Treat others respectfully. Do not spam, repeatedly provoke, harass, impersonate people or spread rumours. Do not publish private conversations or someone else’s screenshots to create conflict.',
+'Follow Discord and Roblox rules and Terms of Service. Exploits, cheating, threats, scams and attempts to harm other members are prohibited.',
+'Treat staff decisions respectfully. If you disagree, request a review through the proper channels instead of starting public arguments or attacks.'
+]],
+['Current teams',[
+'At present, Agua Clan is competitively active only in Reims FWT and Venezuela TSW.',
+'The club plans to return gradually to other competitions and projects. Any teams, tournaments or activities that resume will be officially announced once confirmed.',
+'Do not assume a squad, team or competition is active unless the club has officially announced it.',
+'Players must respect teammates, opponents, captains and organisers, regardless of the team or competition they take part in.'
+]],
+['Conduct and sanctions',[
+'Every report will be reviewed individually. Staff will consider the full context and, when necessary, hear from the people involved before deciding.',
+'A sanction requires verifiable evidence (screenshot, video, log or message), or the direct testimony of a staff member who witnessed the incident. An accusation without evidence or a direct witness is not sufficient on its own.',
+'Evidence must be sent to the private staff chat and kept confidential. Do not post accusations, personal data or sensitive evidence in public channels.',
+'Sanctions depend on severity, intent, harm caused and repeated behaviour. They may include a notice, formal warning, mute, temporary suspension, removal from an activity or permanent removal.',
+'Extremely serious violations—such as sharing CSAM or child sexual abuse material—may result in immediate permanent removal without prior warnings.',
+'Real threats, severe harassment, non-consensual sharing of intimate content, serious discrimination and violations of Discord or Roblox rules may lead to severe sanctions and, where appropriate, a platform report.',
+'During friendlies, respect every participant, even if someone plays poorly, makes mistakes or has a bad performance. Humiliation, personal attacks and result-based harassment are not tolerated.',
+'Staff may take precautionary action while reviewing a case if community safety is at risk. Decisions and supporting evidence will be recorded in the relevant private staff chat.'
+]]
+]},
+it:{eyebrow:'AGUA CLAN · TEAM ACL',title:'REGOLAMENTO<br><span>UFFICIALE</span>',subtitle:'Conosci e rispetta le regole che rappresentano Agua Clan dentro e fuori dal campo.',rulesTitle:'REGOLE DEL CLUB',rulesSub:'Regole generali, squadre attualmente attive e politica disciplinare.',sections:[
+['Regole generali',[
+'È severamente vietato richiedere, condividere, pubblicare o distribuire materiale di abuso sessuale su minori (CSAM), o qualsiasi contenuto sessuale che coinvolga minori. Questo comporterà l’espulsione permanente e potrà essere segnalato alle piattaforme o alle autorità competenti.',
+'Sono vietati pornografia, contenuti NSFW, gore esplicito e materiale sessuale o violento non adatto al server. Non cercare di aggirare questa regola tramite link, immagini nascoste o messaggi privati nella community.',
+'È vietato divulgare, pubblicare o diffondere foto del volto, dati personali o informazioni private di un’altra persona senza il suo consenso. Potranno essere valutate eccezioni molto limitate, ad esempio materiale reso pubblico o approvato esplicitamente dalla persona, ma dovranno essere esaminate dallo staff. Non è mai consentito diffondere contenuti intimi o usare immagini per molestare o umiliare.',
+'Sono vietate minacce di morte, minacce reali e insulti estremamente gravi. Le segnalazioni e i conflitti saranno esaminati considerando il contesto, l’intenzione, la ripetizione e l’impatto sulla persona coinvolta.',
+'È vietata ogni forma di discriminazione basata su nazionalità, origine, aspetto, genere, orientamento, religione, disabilità o qualsiasi altra caratteristica. Gli scherzi sono accettabili solo se tutte le persone coinvolte sono a proprio agio; se qualcuno dice di esserne infastidito, bisogna fermarsi immediatamente.',
+'Mantieni un comportamento rispettoso. Sono vietati spam, provocazioni continue, molestie, impersonificazione e diffusione di voci. Non pubblicare conversazioni private o screenshot altrui per creare conflitti.',
+'Rispetta le regole e i Termini di Servizio di Discord e Roblox. Sono vietati exploit, trucchi, minacce, truffe e tentativi di danneggiare altri membri.',
+'Le decisioni dello staff devono essere rispettate. Se non sei d’accordo, chiedi una revisione tramite i canali appropriati invece di avviare discussioni o attacchi pubblici.'
+]],
+['Squadre attuali',[
+'Attualmente Agua Clan è attiva a livello competitivo esclusivamente in Reims FWT e Venezuela TSW.',
+'Il club prevede di tornare gradualmente in altre competizioni e progetti. Le squadre, i tornei o le attività che riprenderanno saranno annunciati ufficialmente una volta confermati.',
+'Non considerare attiva una rosa, una squadra o una competizione se il club non lo ha annunciato ufficialmente.',
+'I giocatori devono rispettare compagni, avversari, capitani e organizzatori, indipendentemente dalla squadra o dalla competizione.'
+]],
+['Comportamento e sanzioni',[
+'Ogni segnalazione sarà esaminata individualmente. Lo staff valuterà il contesto completo e, quando necessario, ascolterà le persone coinvolte prima di decidere.',
+'Per applicare una sanzione è necessaria una prova verificabile (screenshot, video, registro o messaggio) oppure la testimonianza diretta di un membro dello staff che abbia assistito ai fatti. Un’accusa senza prove né testimone diretto non è sufficiente da sola.',
+'Le prove devono essere inviate nella chat privata dello staff e mantenute riservate. Non pubblicare accuse, dati personali o prove sensibili nei canali pubblici.',
+'La sanzione dipende da gravità, intenzione, danno causato e recidiva. Può consistere in un avviso, un richiamo formale, mute, sospensione temporanea, esclusione da un’attività o espulsione permanente.',
+'Le violazioni estremamente gravi, come la condivisione di CSAM o materiale di abuso sessuale su minori, possono comportare l’espulsione permanente immediata, senza richiami precedenti.',
+'Minacce reali, molestie gravi, diffusione non consensuale di contenuti intimi, discriminazione grave e violazioni delle regole di Discord o Roblox possono comportare sanzioni severe e, se opportuno, una segnalazione alla piattaforma.',
+'Nelle amichevoli devi rispettare tutti i partecipanti, anche se qualcuno gioca male, commette errori o ha una prestazione negativa. Non sono tollerati umiliazioni, attacchi personali o molestie legate al risultato.',
+'Lo staff può adottare misure preventive durante la revisione di un caso se la sicurezza della community è a rischio. Le decisioni e le relative prove saranno registrate nella chat privata dello staff.'
+]]
+]}
+};
+const icons=['01','02','03'];function render(lang){const t=translations[lang];document.documentElement.lang=lang;document.querySelectorAll('[data-i18n]').forEach(el=>{el.innerHTML=t[el.dataset.i18n]});document.getElementById('rules').innerHTML=t.sections.map((s,i)=>`<details class="rule" ${i===0?'open':''}><summary><span class="num">${icons[i]}</span>${s[0]}<span class="chev">⌄</span></summary><div class="content"><ol>${s[1].map(x=>`<li>${x}</li>`).join('')}</ol></div></details>`).join('');document.querySelectorAll('.lang').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));localStorage.setItem('aguaClanLang',lang)}document.querySelectorAll('.lang').forEach(b=>b.addEventListener('click',()=>render(b.dataset.lang)));render(localStorage.getItem('aguaClanLang')||'es');
+</script></body></html>
